@@ -1,5 +1,5 @@
 # Days of the week
-user_Number = input(input('Please enter a number from 1 to 7:'))
+user_Number = input('Please enter a number from 1 to 7:')
 
 if user_Number == '1':
     print("monday")
