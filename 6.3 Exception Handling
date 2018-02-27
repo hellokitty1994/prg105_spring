@@ -1,0 +1,27 @@
+# Copy your file from the previous exercise (Average numbers) and
+# modify it so that it handles the following exceptions:
+# 1.It should handle any IOError exceptions that are raised when the
+# file is opened and data is read from it.
+# 2. It should handle any ValueError exceptions that are raised when
+#  the items that are read from the file are converted to a number.
+def main():
+    try:
+        number_file = open( "numbers.txt" , "r" )
+        total = 0
+        number_lines= 0
+        line = number_file.readline()
+
+        while line != "":
+            number_lines += 1
+            total += int(line)
+            line = number_file.readline()
+        avarge = total / number_lines
+    except IOError as error:
+        print("IOError occured:" , error)
+    except ValueError as error:
+        print("A clue Error occured", error)
+    else:
+        print("The average is", avarge )
+    finally:
+        print("end")
+main()
